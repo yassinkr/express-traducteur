@@ -1,6 +1,6 @@
-# 🚀 Express TypeScript Boilerplate 2024
+# 🚀 Express TypeScript Boilerplate 2025
 
-[![CI](https://github.com/edwinhern/express-typescript-2024/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/edwinhern/express-typescript-2024/actions/workflows/ci.yml)
+[![CI](https://github.com/edwinhern/express-typescript/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/edwinhern/express-typescript-2024/actions/workflows/ci.yml)
 
 ```code
 Hey There! 🙌
@@ -9,33 +9,33 @@ Hey There! 🙌
 
 ## 🌟 Introduction
 
-Welcome to the Express TypeScript Boilerplate 2024 – a streamlined, efficient, and scalable foundation for building powerful backend services with modern tools and practices in Express.js and TypeScript.
+Welcome to Express TypeScript Boilerplate 2025 – a simple and ready-to-use starting point for building backend web services with Express.js and TypeScript.
 
-## 💡 Motivation
+## 💡 Why We Made This
 
-This boilerplate aims to:
+This starter kit helps you:
 
-- ✨ Reduce setup time for new projects
-- 📊 Ensure code consistency and quality
-- ⚡ Facilitate rapid development
-- 🛡️ Encourage best practices in security, testing, and performance
+- ✨ Start new projects faster
+- 📊 Write clean, consistent code
+- ⚡ Build things quickly
+- 🛡️ Follow best practices for security and testing
 
-## 🚀 Features
+## 🚀 What's Included
 
-- 📁 Modular Structure: Organized by feature for easy navigation and scalability
-- 💨 Faster Execution with tsx: Rapid TypeScript execution with `tsx` and type checking with `tsc`
-- 🌐 Stable Node Environment: Latest LTS Node version in `.nvmrc`
-- 🔧 Simplified Environment Variables: Managed with Envalid
-- 🔗 Path Aliases: Cleaner code with shortcut imports
-- 🔄 Renovate Integration: Automatic updates for dependencies
-- 🔒 Security: Helmet for HTTP header security and CORS setup
-- 📊 Logging: Efficient logging with `pino-http`
-- 🧪 Comprehensive Testing: Setup with Vitest and Supertest
-- ✅ Unified Code Style: `Biomejs` for consistent coding standards
-- 📃 API Response Standardization: `ServiceResponse` class for consistent API responses
-- 🐳 Docker Support: Ready for containerization and deployment
-- 📝 Input Validation with Zod: Strongly typed request validation using `Zod`
-- 🧩 Swagger UI: Interactive API documentation generated from Zod schemas
+- 📁 Well-organized folders: Files grouped by feature so you can find things easily
+- 💨 Fast development: Quick code running with `tsx` and error checking with `tsc`
+- 🌐 Latest Node.js: Uses the newest stable Node.js version from `.tool-versions`
+- 🔧 Safe settings: Environment settings checked with Zod to prevent errors
+- 🔗 Short import paths: Clean code with easy imports using path shortcuts
+- 🔄 Auto-updates: Keeps dependencies up-to-date with Renovate
+- 🔒 Better security: Built-in protection with Helmet and CORS settings
+- 📊 Easy tracking: Built-in logging with `pino-http`
+- 🧪 Ready-to-test: Testing tools with Vitest and Supertest already set up
+- ✅ Clean code: Consistent coding style with `Biomejs`
+- 📃 Standard responses: Unified API responses using `ServiceResponse`
+- 🐳 Easy deployment: Ready for Docker containers
+- 📝 Input checking: Request validation using Zod
+- 🧩 API browser: Interactive API docs with Swagger UI
 
 ## 🛠️ Getting Started
 
@@ -47,9 +47,9 @@ For a visual guide, watch the [video demo](https://github.com/user-attachments/a
 
 #### Step 1: 🚀 Initial Setup
 
-- Clone the repository: `git clone https://github.com/edwinhern/express-typescript-2024.git`
-- Navigate: `cd express-typescript-2024`
-- Install dependencies: `npm ci`
+- Clone the repository: `git clone https://github.com/edwinhern/express-typescript.git`
+- Navigate: `cd express-typescript`
+- Install dependencies: `pnpm install`
 
 #### Step 2: ⚙️ Environment Configuration
 
@@ -58,9 +58,9 @@ For a visual guide, watch the [video demo](https://github.com/user-attachments/a
 
 #### Step 3: 🏃‍♂️ Running the Project
 
-- Development Mode: `npm run dev`
-- Building: `npm run build`
-- Production Mode: Set `.env` to `NODE_ENV="production"` then `npm run build && npm run start:prod`
+- Development Mode: `pnpm start:dev`
+- Building: `pnpm build`
+- Production Mode: Set `NODE_ENV="production"` in `.env` then `pnpm build && pnpm start:prod`
 
 ## 🤝 Feedback and Contributions
 
@@ -71,11 +71,12 @@ We'd love to hear your feedback and suggestions for further improvements. Feel f
 ## 📁 Folder Structure
 
 ```code
-├── Dockerfile
-├── README.md
 ├── biome.json
-├── package-lock.json
+├── Dockerfile
+├── LICENSE
 ├── package.json
+├── pnpm-lock.yaml
+├── README.md
 ├── src
 │   ├── api
 │   │   ├── healthCheck
@@ -115,6 +116,4 @@ We'd love to hear your feedback and suggestions for further improvements. Feel f
 │   └── server.ts
 ├── tsconfig.json
 └── vite.config.mts
-
-14 directories, 31 files
 ```
