@@ -17,6 +17,8 @@
 	},
 	"dependencies": {
 		"@asteasolutions/zod-to-openapi": "7.3.4",
+		"@google-cloud/translate": "^9.2.0",
+		"axios": "^1.12.2",
 		"cors": "2.8.5",
 		"dotenv": "17.2.1",
 		"express": "5.1.0",

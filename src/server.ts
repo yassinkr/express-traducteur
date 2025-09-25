@@ -1,39 +1,33 @@
-import cors from "cors";
-import express, { type Express } from "express";
-import helmet from "helmet";
-import { pino } from "pino";
-import { healthCheckRouter } from "@/api/healthCheck/healthCheckRouter";
-import { userRouter } from "@/api/user/userRouter";
-import { openAPIRouter } from "@/api-docs/openAPIRouter";
-import errorHandler from "@/common/middleware/errorHandler";
-import rateLimiter from "@/common/middleware/rateLimiter";
-import requestLogger from "@/common/middleware/requestLogger";
-import { env } from "@/common/utils/envConfig";
+import dotenv from "dotenv";
+import App from "./app";
 
-const logger = pino({ name: "server start" });
-const app: Express = express();
+// Load env vars
+dotenv.config();
 
-// Set the application to trust the reverse proxy
-app.set("trust proxy", true);
+const PORT = parseInt(process.env.PORT || "4000", 10);
 
-// Middlewares
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: env.CORS_ORIGIN, credentials: true }));
-app.use(helmet());
-app.use(rateLimiter);
+async function startServer() {
+  try {
+    console.log("🚀 Bootstrapping Traducteur Rapide server...");
 
-// Request logging
-app.use(requestLogger);
+    const app = new App();
+    app.listen(PORT);
+  } catch (error) {
+    console.error("❌ Failed to start server:", error);
+    process.exit(1);
+  }
+}
 
-// Routes
-app.use("/health-check", healthCheckRouter);
-app.use("/users", userRouter);
+// Start server
+startServer();
 
-// Swagger UI
-app.use(openAPIRouter);
+// Graceful shutdown
+process.on("SIGTERM", () => {
+  console.log("⚠️ SIGTERM received, shutting down gracefully...");
+  process.exit(0);
+});
 
-// Error handlers
-app.use(errorHandler());
-
-export { app, logger };
+process.on("SIGINT", () => {
+  console.log("⚠️ SIGINT received, shutting down gracefully...");
+  process.exit(0);
+});
