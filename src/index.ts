@@ -1,4 +1,4 @@
-import App from "./app";
+import {App} from "./app";
 
  
 const PORT = parseInt(process.env.PORT || '4000');
@@ -6,7 +6,6 @@ const PORT = parseInt(process.env.PORT || '4000');
 try {
 console.log("Starting Traducteur Rapide server...");
 const app = new App();
-app.listen(PORT);
 
 } catch (error) {
   console.error('Failed to start server:', error);

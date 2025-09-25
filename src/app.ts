@@ -190,18 +190,6 @@ class App {
     // Periodic cleanup task for expired activations
   }
 
-  public listen(port: number): void {
-    this.app.listen(port, () => {
-      console.log('\n' + '🚀'.repeat(20));
-      console.log(`🚀 Traducteur Rapide server running on port ${port}`);
-      console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
-      console.log(`📡 Health check: http://localhost:${port}/health`);
-      console.log(`🔧 API activate: http://localhost:${port}/api/activate`);
-      console.log(`🔧 API translate: http://localhost:${port}/api/translate`);
-      console.log(`📝 Enhanced request logging is ENABLED`);
-      console.log('🚀'.repeat(20) + '\n');
-    });
-  }
 }
 
-export default App;
+export { App };
