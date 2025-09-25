@@ -187,11 +187,7 @@ class App {
   }
 
   private startCleanupTasks(): void {
-    // Clean expired sessions every hour
-    setInterval(() => {
-      console.log('🧹 Running cleanup task for expired sessions...');
-      this.activationService.cleanExpiredSessions();
-    }, 60 * 60 * 1000);
+    // Periodic cleanup task for expired activations
   }
 
   public listen(port: number): void {

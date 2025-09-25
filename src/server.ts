@@ -16,7 +16,7 @@ export const logger = console;
 if (require.main === module) {
   try {
     console.log("🚀 Bootstrapping Traducteur Rapide server...");
-    appInstance.listen(PORT);
+    // appInstance.listen(PORT);
   } catch (error) {
     console.error("❌ Failed to start server:", error);
     process.exit(1);
