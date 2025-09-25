@@ -22,3 +22,9 @@ process.on('SIGINT', () => {
   console.log('SIGINT received, shutting down gracefully...');
   process.exit(0);
 });
+const appInstance = new App().app;
+
+// Vercel expects a default export function
+export default function handler(req: any, res: any) {
+  return appInstance(req, res);
+}
