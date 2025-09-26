@@ -32,3 +32,10 @@ if (require.main === module) {
     process.exit(0);
   });
 }
+
+
+ 
+ 
+
+// Export the Express app as default for Vercel
+export default appInstance.app;
